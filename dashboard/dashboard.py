@@ -13,14 +13,15 @@ from mpl_toolkits.mplot3d import Axes3D
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Construct the absolute path to the CSV file
-csv_file_path = os.path.join(script_dir, 'day_data.csv')
-csv_file_path = os.path.join(script_dir, 'hour_data.csv')
-csv_file_path = os.path.join(script_dir, 'rfm_data.csv')
-# Read the CSV file
-bike_day_df = pd.read_csv(csv_file_path)
-bike_hour_df = pd.read_csv(csv_file_path)
-rfm_data = pd.read_csv(csv_file_path)
+# Construct the absolute path to each CSV file
+bike_day_csv_path = os.path.join(script_dir, 'day_data.csv')
+bike_hour_csv_path = os.path.join(script_dir, 'hour_data.csv')
+rfm_csv_path = os.path.join(script_dir, 'rfm_data.csv')
+
+# Read each CSV file into separate DataFrames
+bike_day_df = pd.read_csv(bike_day_csv_path)
+bike_hour_df = pd.read_csv(bike_hour_csv_path)
+rfm_data = pd.read_csv(rfm_csv_path)
 
 # Function to plot Recency vs Frequency
 def plot_recency_frequency():
